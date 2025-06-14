@@ -1,13 +1,15 @@
 function App() {
+  const videos = ['/hero1.mp4', '/hero2.mp4', '/hero3.mp4'];
+  const randomVideo = videos[Math.floor(Math.random() * videos.length)];
   return (
     <>
       {/* Sticky navbar su glassmorphism efektu */}
       <header className="sticky top-0 z-50 bg-white/5 backdrop-blur-md border-b border-white/10 shadow-lg">
         <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
-          <a href="#" className="text-xl md:text-2xl font-bold text-primary font-orbitron tracking-wide">
+          <a href="#" className="text-xl md:text-2xl font-bold text-white font-orbitron tracking-wide">
             Tricking Lietuva
           </a>
-          <ul className="flex gap-4 md:gap-6 text-sm md:text-base font-medium">
+          <ul className="flex gap-4 md:gap-6 text-sm md:text-base font-medium font-orbitron">
             <li><a href="#apie" className="text-white hover:text-primary transition">Apie</a></li>
             <li><a href="#spotai" className="text-white hover:text-primary transition">Spot’ai</a></li>
             <li><a href="#video" className="text-white hover:text-primary transition">Video</a></li>
@@ -16,10 +18,9 @@ function App() {
         </nav>
       </header>
 
-      <main className="min-h-screen bg-background text-white px-6 py-12">
+      <main className="min-h-screen bg-background text-white px-6 py-12 font-orbitron">
         {/* HERO */}
         <section className="relative w-full h-[90vh] flex items-center justify-center text-center overflow-hidden">
-          {/* Video background */}
           <video
             autoPlay
             loop
@@ -27,16 +28,14 @@ function App() {
             playsInline
             className="absolute top-0 left-0 w-full h-full object-cover z-0 filter brightness-125"
           >
-            <source src="/hero.mp4" type="video/mp4" />
+            <source src={randomVideo} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
 
-          {/* Overlay */}
           <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
 
-          {/* Content */}
           <div className="relative z-20 px-6" data-aos="zoom-in" data-aos-duration="800">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary font-orbitron mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Tricking Lietuva
             </h1>
             <p className="text-lg md:text-xl mb-8 text-white">
@@ -54,11 +53,11 @@ function App() {
         {/* APIE */}
         <section
           id="apie"
-          className="scroll-mt-24 max-w-5xl mx-auto text-left mb-24 px-4"
+          className="scroll-mt-24 max-w-5xl mx-auto text-left mb-24 px-4 mt-24"
           data-aos="fade-up"
           data-aos-duration="800"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Kas yra Tricking?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Kas yra Tricking?</h2>
           <p className="text-lg leading-relaxed mb-6">
             Tricking – tai dinamiškas judesių menas, sujungiantis kovos menų smūgius, akrobatinius šuolius ir šokio elementus į vientisą sprogstamą pasirodymą. Tai nėra varžybinis sportas – tai kūrybiška judesio išraiška, kurioje svarbiausia stilius, technika ir asmeninis braižas.
           </p>
@@ -74,23 +73,18 @@ function App() {
           data-aos="fade-up"
           data-aos-duration="800"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
-            Tricking spot’ai Lietuvoje
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 text-center">Tricking spot’ai Lietuvoje</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {/* VILNIUS */}
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="100">
               <img src="https://via.placeholder.com/400x200?text=Vilnius+Spot" alt="Vilniaus spotas" className="rounded-lg mb-4" />
               <h3 className="text-xl font-semibold text-primary mb-2">Vilnius</h3>
               <p className="text-sm leading-relaxed">Vingio parkas, sporto aikštelė su minkšta žole, tinka trukams ant žemės.</p>
             </div>
-            {/* KAUNAS */}
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="200">
               <img src="https://via.placeholder.com/400x200?text=Kaunas+Spot" alt="Kauno spotas" className="rounded-lg mb-4" />
               <h3 className="text-xl font-semibold text-primary mb-2">Kaunas</h3>
               <p className="text-sm leading-relaxed">Santakos parkas – lygi veja ir daug erdvės treniruotėms.</p>
             </div>
-            {/* KLAIPĖDA */}
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="300">
               <img src="https://via.placeholder.com/400x200?text=Klaipeda+Spot" alt="Klaipėdos spotas" className="rounded-lg mb-4" />
               <h3 className="text-xl font-semibold text-primary mb-2">Klaipėda</h3>
@@ -106,18 +100,37 @@ function App() {
           data-aos="fade-up"
           data-aos-duration="800"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10 text-center">
-            Tricking video galerija
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 text-center">Tricking video galerija</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
-              <iframe className="w-full h-full" src="https://www.youtube.com/embed/XMi7NKD4GV4" title="Tricking video 1" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="400">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/AnL4Abie4Ps"
+                title="Tricking video 4"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
-              <iframe className="w-full h-full" src="https://www.youtube.com/embed/lV7d1TBgzF4" title="Tricking video 2" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="500">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/rK7ID2SO_Iw"
+                title="Tricking video 5"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
-            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
-              <iframe className="w-full h-full" src="https://www.youtube.com/embed/RZKhVMWNjW0" title="Tricking video 3" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="600">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/iIuvLCS5KvY"
+                title="Tricking video 6"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </section>
@@ -129,7 +142,7 @@ function App() {
           data-aos="fade-up"
           data-aos-duration="800"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Susisiek su mumis</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Susisiek su mumis</h2>
           <p className="text-lg mb-6">
             Turi klausimų ar nori prisijungti prie Tricking bendruomenės? Parašyk mums!
           </p>
