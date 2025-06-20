@@ -1,6 +1,10 @@
+import React from 'react';
+import MapSection from './MapSection';
+
 function App() {
   const videos = ['/hero1.mp4', '/hero2.mp4', '/hero3.mp4'];
   const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+
   return (
     <>
       {/* Sticky navbar su glassmorphism efektu */}
@@ -35,9 +39,7 @@ function App() {
           <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
 
           <div className="relative z-20 px-6" data-aos="zoom-in" data-aos-duration="800">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Tricking Lietuva
-            </h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Tricking Lietuva</h1>
             <p className="text-lg md:text-xl mb-8 text-white">
               Pirmasis puslapis Lietuvoje skirtas Tricking bendruomenei – čia rasi informaciją apie šį sportą, treniruočių vietas ir vaizdo galeriją.
             </p>
@@ -66,7 +68,7 @@ function App() {
           </p>
         </section>
 
-        {/* SPOT’AI */}
+        {/* SPOT’AI + MAP */}
         <section
           id="spotai"
           className="scroll-mt-24 max-w-6xl mx-auto mb-24 px-4"
@@ -74,23 +76,27 @@ function App() {
           data-aos-duration="800"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-10 text-center">Tricking spot’ai Lietuvoje</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+          {/* Kortelės */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="100">
-              <img src="https://via.placeholder.com/400x200?text=Vilnius+Spot" alt="Vilniaus spotas" className="rounded-lg mb-4" />
+              <img src="/images/igym-photo.jpg" alt="Vilniaus IGYM salė" className="rounded-lg mb-4" />
               <h3 className="text-xl font-semibold text-primary mb-2">Vilnius</h3>
-              <p className="text-sm leading-relaxed">Vingio parkas, sporto aikštelė su minkšta žole, tinka trukams ant žemės.</p>
+              <p className="text-sm leading-relaxed">IGYM gimnastikos centras – patalpos su specialia danga triukams.</p>
             </div>
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="200">
-              <img src="https://via.placeholder.com/400x200?text=Kaunas+Spot" alt="Kauno spotas" className="rounded-lg mb-4" />
-              <h3 className="text-xl font-semibold text-primary mb-2">Kaunas</h3>
+              <img src="/images/santakos-parkas.jpg" alt="Santakos parkas" className="rounded-lg mb-4" />              <h3 className="text-xl font-semibold text-primary mb-2">Kaunas</h3>
               <p className="text-sm leading-relaxed">Santakos parkas – lygi veja ir daug erdvės treniruotėms.</p>
             </div>
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="300">
-              <img src="https://via.placeholder.com/400x200?text=Klaipeda+Spot" alt="Klaipėdos spotas" className="rounded-lg mb-4" />
-              <h3 className="text-xl font-semibold text-primary mb-2">Klaipėda</h3>
-              <p className="text-sm leading-relaxed">Parkas prie Danės – kietesnė danga, tinka su kilimėliais ar crash mats.</p>
+              <img src="/images/pirmas-tvenkas.jpg" alt="Klaipėdos spotas" className="rounded-lg mb-4" />
+              <h3 className="text-xl font-semibold text-primary mb-2">Jonava</h3>
+              <p className="text-sm leading-relaxed">Pirmas tvenkinys su minkstu smeliu </p>
             </div>
           </div>
+
+          {/* Žemėlapis */}
+          <MapSection />
         </section>
 
         {/* VIDEO */}
