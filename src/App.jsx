@@ -1,8 +1,10 @@
 import React from 'react';
 import MapSection from './MapSection';
 
+const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 function App() {
-  const videos = ['public/hero1.mp4', 'public/hero2.mp4', 'public/hero3.mp4'];
+  const videos = [assetPath('hero1.mp4'), assetPath('hero2.mp4'), assetPath('hero3.mp4')];
   const randomVideo = videos[Math.floor(Math.random() * videos.length)];
 
   return (
@@ -80,17 +82,17 @@ function App() {
           {/* Kortelės */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="100">
-              <img src="/images/igym-sale.jpg" alt="Vilniaus IGYM salė" className="rounded-lg mb-4" />
+              <img src={assetPath('images/igym-sale.jpg')} alt="Vilniaus IGYM salė" className="rounded-lg mb-4" />
               <h3 className="text-xl font-semibold text-primary mb-2">Vilnius</h3>
               <p className="text-sm leading-relaxed">IGYM gimnastikos centras – patalpos su specialia danga triukams.</p>
             </div>
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="200">
-              <img src="/images/santakos-parkas.jpg" alt="Santakos parkas" className="rounded-lg mb-4" />
+              <img src={assetPath('images/santakos-parkas.jpg')} alt="Santakos parkas" className="rounded-lg mb-4" />
               <h3 className="text-xl font-semibold text-primary mb-2">Kaunas</h3>
               <p className="text-sm leading-relaxed">Santakos parkas – lygi veja ir daug erdvės treniruotėms.</p>
             </div>
             <div className="bg-[#131a2f] rounded-xl p-4 shadow-md hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="300">
-              <img src="/images/pirmas-tvenkinys.jpg" alt="Pirmas tvenkinys Jonavoje" className="rounded-lg mb-4" />
+              <img src={assetPath('images/pirmas-tvenkinys.jpg')} alt="Pirmas tvenkinys Jonavoje" className="rounded-lg mb-4" />
               <h3 className="text-xl font-semibold text-primary mb-2">Jonava</h3>
               <p className="text-sm leading-relaxed">Pirmas tvenkinys su minkstu smeliu </p>
             </div>
